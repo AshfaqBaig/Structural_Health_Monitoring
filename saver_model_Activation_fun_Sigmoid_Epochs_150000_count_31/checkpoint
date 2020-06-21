@@ -1,0 +1,2 @@
+model_checkpoint_path: "Activation_fun_Sigmoid_Epochs_150000_model-1000"
+all_model_checkpoint_paths: "Activation_fun_Sigmoid_Epochs_150000_model-1000"

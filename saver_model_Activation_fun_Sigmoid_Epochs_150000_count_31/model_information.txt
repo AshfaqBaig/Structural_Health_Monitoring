@@ -1,0 +1,1 @@
+{"Hidden_Layers_Neurons": [97, 12], "final_layer_name": "Tensor(\"activation_function_3:0\", shape=(?, 1), dtype=float32)", "Time_taken_in_seconds": 2774.4149888999964, "Activation_fun": "Sigmoid", "learning_rate": 6.0522335634254975e-05, "training_epochs": 150000, "count": "31"}
