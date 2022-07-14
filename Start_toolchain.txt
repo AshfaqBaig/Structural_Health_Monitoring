@@ -1,0 +1,71 @@
+
+
+az iot hub module-twin update -n IOTDEVDVLGENOBAWE01-iot-hub-dev1-sgre -d EDDEVDVLGENOBAWE01-dev1-edge-device-2 -m decision-maker --desired "{'TEAM_INSTRUCTIONS':[{'version': 'v0.1.4','mould_id':'b9701u2','blade_id':'b97-00','blade_revision':'b97-00','layer_id':'090_B97-00_LP_Outer_B1_1-288','pallet_id':'pallet_4'}]}"
+
+az iot hub module-twin update -n IOTDEVDVLGENOBAWE01-iot-hub-dev1-sgre -d EDDEVDVLGENOBAWE01-dev1-edge-device-2 -m decision-maker --desired "{'command': 'FINALISE'}"
+
+
+az iot hub module-twin update -n IOTDEVDVLGENOBAWE01-iot-hub-dev1-sgre -d EDDEVDVLGENOBAWE01-dev1-edge-device-2 -m image-grabber-aal-b9701u2-cam015 --desired "{'command': 'mock_on'}"
+
+az iot hub module-twin update -n IOTDEVDVLGENOBAWE01-iot-hub-dev1-sgre -d EDDEVDVLGENOBAWE01-dev1-edge-device-2 -m image-grabber-aal-b9701u2-cam001 --desired "{'command': 'mock_on'}"
+
+az iot hub module-twin update -n IOTDEVDVLGENOBAWE01-iot-hub-dev1-sgre -d EDDEVDVLGENOBAWE01-dev1-edge-device-2 -m image-grabber-aal-b9701u2-cam004 --desired "{'command': 'mock_on'}"
+
+az iot hub module-twin update -n IOTDEVDVLGENOBAWE01-iot-hub-dev1-sgre -d EDDEVDVLGENOBAWE01-dev1-edge-device-2 -m image-grabber-aal-b9701u2-cam006 --desired "{'command': 'mock_on'}"
+
+az iot hub module-twin update -n IOTDEVDVLGENOBAWE01-iot-hub-dev1-sgre -d EDDEVDVLGENOBAWE01-dev1-edge-device-2 -m image-grabber-aal-b9701u2-cam021 --desired "{'command': 'mock_on'}"
+
+OFF cammands:
+az iot hub module-twin update -n IOTDEVDVLGENOBAWE01-iot-hub-dev1-sgre -d EDDEVDVLGENOBAWE01-dev1-edge-device-2 -m image-grabber-aal-b9701u2-cam015 --desired "{'command': 'mock_off'}"
+
+az iot hub module-twin update -n IOTPRDDVLGENOBAWE02-iot-hub \
+-d EDPRDDVLGENOBAWE02-prd-edge-1 \
+-m decision-maker \
+--desired '{"command":"add_team_instruction","correlationId":"unique identified for a command","params":{"version":"v0.1.4","mouldId":"b9701u2","bladeId":"b97-00","bladeRevision":"b97-00","layerId":"090_B97-00_LP_Outer_B1_1-288","palletId":"pallet_1"}}'
+
+az iot hub module-twin update -n IOTDEVDVLGENOBAWE01-iot-hub-dev1-sgre -d EDDEVDVLGENOBAWE01-dev1-edge-device-2 -m image-grabber-aal-b9701u2-cam001 --desired "{'command': 'mock_off'}"
+
+az iot hub module-twin update -n IOTDEVDVLGENOBAWE01-iot-hub-dev1-sgre -d EDDEVDVLGENOBAWE01-dev1-edge-device-2 -m image-grabber-aal-b9701u2-cam004 --desired "{'command': 'mock_off'}"
+
+az iot hub module-twin update -n IOTDEVDVLGENOBAWE01-iot-hub-dev1-sgre -d EDDEVDVLGENOBAWE01-dev1-edge-device-2 -m image-grabber-aal-b9701u2-cam006 --desired "{'command': 'mock_off'}"
+
+az iot hub module-twin update -n IOTDEVDVLGENOBAWE01-iot-hub-dev1-sgre -d EDDEVDVLGENOBAWE01-dev1-edge-device-2 -m image-grabber-aal-b9701u2-cam021 --desired "{'command': 'mock_off'}"
+
+
+Path to mock images  = /mnt/data/iot-work-volume/mock-image-grabber 
+
+iotedge logs image-grabber-aal-b9701u2-cam015  --tail 50 -f   iotedge logs image-grabber-aal-b9701u2-cam001  --tail 50 -f  iotedge logs image-grabber-aal-b9701u2-cam004  --tail 50 -f 
+
+iotedge logs image-grabber-aal-b9701u2-cam006  --tail 50 -f    iotedge logs image-grabber-aal-b9701u2-cam021  --tail 50 -f 
+
+
+iotedge logs edge-detection-aal-b9701u2-cam001  --tail 50 -f  iotedge logs edge-detection-aal-b9701u2-cam004  --tail 50 -f
+
+iotedge logs edge-detection-aal-b9701u2-cam006  --tail 50 -f    iotedge logs edge-detection-aal-b9701u2-cam015  --tail 50 -f  iotedge logs edge-detection-aal-b9701u2-cam021  --tail 50 -f
+
+
+iotedge logs edge-verification-aal-b9701u2-cam001  --tail 50 -f  iotedge logs edge-verification-aal-b9701u2-cam004  --tail 50 -f
+
+iotedge logs edge-verification-aal-b9701u2-cam006 --tail 50 -f  iotedge logs edge-verification-aal-b9701u2-cam015  --tail 50 -f  iotedge logs edge-verification-aal-b9701u2-cam021  --tail 50 -f
+
+
+
+iotedge logs decision-maker --tail 50 -f
+
+iotedge logs laser-feedback  --tail 50 -f
+
+iotedge logs laser-hub  --tail 50 -f
+
+iotedge logs tis  --tail 1000 -f
+iotedge restart edge-detection-aal-b9701u2-cam001 
+iotedge restart edge-detection-aal-b9701u2-cam006
+
+iotedge restart image-grabber-aal-b9701u2-cam015  image-grabber-aal-b9701u2-cam001 , image-grabber-aal-b9701u2-cam006, image-grabber-aal-b9701u2-cam021, image-grabber-aal-b9701u2-cam004
+
+sudo systemctl restart iotedge
+
+etcdctl del /moulds/b9701u2
+
+iotedge logs edge-detection-aal-b9701u2-cam016  --tail 50 -f
+
+ED: 87589

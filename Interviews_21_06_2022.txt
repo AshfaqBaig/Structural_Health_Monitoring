@@ -1,0 +1,21 @@
+Swagat:
+
+python -6/10
+API - 4/10
+AWS - 0/10, GPU
+sql - 5/10
+
+
+Saurabh Singh:
+python - 8/10
+API -  9/10
+AWS - 8/10
+sql - 9/10
+
+l=[1,2,3,4]
+
+def looping():
+
+ED new release v0.2.6
+ 
+Feature: Dynamically assignment of new mould id 

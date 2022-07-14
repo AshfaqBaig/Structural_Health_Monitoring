@@ -1,0 +1,68 @@
+"TEAM_INSTRUCTIONS": [
+                {
+                    "version": "v0.1.4",
+                    "mould_id": "b9701u2",
+                    "blade_id": "b97-00",
+                    "blade_revision": "b97-00",
+                    "layer_id": "090_B97-00_LP_Outer_B1_1-288",
+                    "pallet_id": "pallet_4"
+                },
+                {
+                    "version": "v0.1.4",
+                    "mould_id": "b9701u2",
+                    "blade_id": "b97-00",
+                    "blade_revision": "b97-00",
+                    "layer_id": "090_B97-00_LP_Outer_B1_1-288",
+                    "pallet_id": "pallet_1"
+                },
+                {
+                    "version": "v0.1.4",
+                    "mould_id": "b9701u2",
+                    "blade_id": "b97-00",
+                    "blade_revision": "b97-00",
+                    "layer_id": "090_B97-00_LP_Outer_B1_1-288",
+                    "pallet_id": "pallet_2"
+                },
+                {
+                    "version": "v0.1.4",
+                    "mould_id": "b9701u2",
+                    "blade_id": "b97-00",
+                    "blade_revision": "b97-00",
+                    "layer_id": "090_B97-00_LP_Outer_B1_1-288",
+                    "pallet_id": "pallet_3"
+                },
+                {
+                    "version": "v0.1.4",
+                    "mould_id": "b9701u2",
+                    "blade_id": "b97-00",
+                    "blade_revision": "b97-00",
+                    "layer_id": "090_B97-00_LP_Outer_B1_1-288",
+                    "pallet_id": "pallet_5"
+                }
+            ],
+
+difference = self.calc_timedifference(image_data.get('metadata').get('capture-timestamp')) 
+if difference > self.discard_image_after_s:    
+    log.info('Discarding image due to delay of %ssec', difference) return None
+
+ED:
+
+"TIS_MODEL_NAME": "Dexined_onnx",
+"TIS_MODEL_VERSION" : "1",
+
+/mnt/azure/retrain/Optical-blades-segregated-data/02u2-b1_layer/filtered-images
+
+
+/mnt/azure/retrain/Optical-blades-segregated-data/02u2_ud1_layer
+
+rm -rf *
+
+sudo cp -r /mnt/data/iot-work-volume/mock-image-input/aal* .
+
+az iot hub module-twin update \
+  --device-id EDDEVDVLGENOBAWE01-dev-edge-device-1 --module-id image-grabber-cam01 --hub-name IOTDEVDVLGENOBAWE01-iot-hub-test-sgre \
+  --set properties.desired='{"command":"on"}'
+
+"command":"mock-on",
+
+docker run --gpus all -it --rm -v /home/bashfaq/code/Keypoint_module_code/keypointrcnn-torchvision/Only_model_marker_detection:/workspace nvcr.io/nvidia/pytorch:22.02-py3

@@ -1,0 +1,168 @@
+  default = 49143 -- for 25 core pool
+   49887 -- for Ray
+   49889 -- updated Ray
+   50244 -- ray + batch(6)
+   50828 -- ray + batch(6)+ task
+   51065 -- ray + batch(6)+ task+ modified mqtt
+   47214 -- image grabber
+   51634 -- ray+ batch(1)
+   51656 -- old multiprocessing
+   58138 -- Ray+tis_8007(http)+updated_GRPC -Edge3
+   61869 -- Ray+tis_8000(hhtp) - optical
+
+back up logs- mnt/azure/retrain/container_logs_backup/backedup_logs-20210706090708910312
+
+To increase the shear memory in dkaldev:
+
+1. go to path     /var/lib/docker/containers/$CONTAINER_ID/hostconfig.json
+2. ls -a 
+3. sudo vi hostconfig.json 
+4. type i (to change to insert)
+5. update the values and type (esc) and (:) and (wq) and (enter) (to save the updated one) 
+3. json -I -f hostconfig.json-e "this.ShmSize=805306368
+4.  docker exec -it 
+
+To check the date in dkaldev: ls -lt
+
+To check the cpus,threads,sockets: lscpu | grep -E '^Thread|^Core|^Socket|^CPU\('
+*raw/hall10/ED_Model_Training/O1U2/
+1- BDCN3
+2- HED
+
+Steps for e2e:
+
+1.Deployment of image grabber and edge detection pipeline.
+2.Running the branch and capturing the logs 
+3.Identify the bottlenecks during image processing in pipeline
+4.Fixing the code performance 
+
+
+Gives port number which are utilised- sudo netstat -tulpn | grep LISTEN, sudo lsof -i -P -n | grep LISTEN
+
+sudo systemctl start tis.service 
+
+To remove tis- docker rm -f tis
+
+curl localhost:9600/metrics 
+
+sudo iotedge support-bundle --since 6d
+
+iotedge logs  image-grabber-aal-b9701u2-cam006  --tail 50 -f | log-formatter  iotedge logs image-grabber-aal-b9702u2-cam004  --tail 50 -f  iotedge logs image-grabber-aal-b9702u2-cam006  --tail 50 -f
+
+iotedge logs  image-grabber-aal-b9702u2-cam008 --tail 50 -f   iotedge logs image-grabber-aal-b9702u2-cam011 --tail 50 -f
+
+
+iotedge logs  edge-detection-aal-b9702u2-cam015
+
+iotedge logs edge-detection-aal-b9701u2-cam006 --tail 150 -f | log-formatter iotedge logs edge-detection-aal-b9702u2-cam004 --tail 50 -f iotedge logs  edge-detection-aal-b9702u2-cam006 --tail 50 -f
+
+iotedge logs edge-detection-aal-b9702u2-cam008 --tail 50 -f iotedge logs edge-detection-aal-b9702u2-cam008 --tail 50 -f
+
+
+iotedge  restart  image-grabber-aal-b9702u2-cam011
+
+
+az iot hub module-twin update -n IOTPRDDVLGENOBAWE02-iot-hub -d EDPRDDVLGENOBAWE02-prd-edge-2 -m decision-maker --desired "{'TEAM_INSTRUCTIONS':[{'version': 'v0.1.4','mould_id':'b9701u2','blade_id':'b97-00','blade_revision':'b97-00','layer_id':'090_B97-00_LP_Outer_B1_1-288','pallet_id':'pallet_4'}]}"
+
+
+iotedge logs edge-verification-aal-b9701u2-cam013 --tail 50 -f
+
+
+iotedge logs edge-verification-cam-aal-h08-019  --tail 50 -f
+
+iotedge logs decision-maker  --tail 50 -f
+
+iotedge logs laser-feedback  --tail 50 -f
+
+
+iotedge logs laser-hub  --tail 50 -f
+
+iotedge logs tis  --tail 50 -f
+
+iotedge logs metrics-collector --tail 1000
+
+curl localhost:7062/metrics
+
+iotedge logs edgeHub -f --tail  10000 >> edgehublog.txt
+
+iotedge logs edgeAgent -f --tail  100
+
+az account set-s "SGRE DEV DVL GEN WE01 - CSP"
+
+Port forwarding (ssh -L  9600:localhost:9600 dkaldev)
+
+docker run -it -vC:\KT\Infrastructure\e2e\blade-inspection-wiki:/scripts -vC:\Users\ashfaq.baig.ext@siemensgamesa.com\.ssh:/root/.ssh mcr.microsoft.com/azure-cli bin/bash
+
+docker run -it -vC:\KT\Infrastructure\e2e\do-ob-wiki-blade-inspection:/scripts -vC:\Users\ashfaq.baig.ext@siemensgamesa.com\.ssh:/root/.ssh mcr.microsoft.com/azure-cli bin/bash
+
+ray==1.4.Pytorch model training can be started from a cmmand line with current ED dataset
+
+Pes,Rava university
+
+scp -r bashfaq@dkaldev:/home/bashfaq/Stress_test_logs/ C:/KT/Logs_Analysis/
+
+scp  bashfaq@dkaldev:/var/snap/docker/common/var-lib-docker/containers/d58859c31a3fd797db680ee638cc1d9dc22cdc124ef87654440171881541ef8f/d58859c31a3fd797db680ee638cc1d9dc22cdc124ef87654440171881541ef8f-json.log ./Downloads/.
+
+scp -r bashfaq@dkaldev:/mnt/data/iot-work-volume/image-grabber-output/cam-aal-h08-021/ ./Downloads/.
+
+scp -r bashfaq@dkaldev:/var/snap/docker/common/var-lib-docker/containers/dc2c648223be45076319a9e7ecec3d9aa9f082dc61f6f59677251182831e6ed9/ ./Downloads/.
+
+Dexined - master
+comit------> b3fc5f2d
+
+sudo find /var/lib/docker/containers/ -type f -name "*-json.log" -exec cp {} ./ \;
+
+for delete:
+sudo find /var/lib/docker/containers/ -type f -name "*.log" -delete
+
+for pytorch currency=1
+Total request = 915.4,907.0, 889.1, 895.5 , 897.7, 896.9, 942.1,856.2,905.1,878.1 = 898.3
+tile_sum = 305.5, 296.9, 296.2, 300.8, 290.9,298.0, 306.3,294.0,291.0,288.660 = 296.8
+Actual Inference response = 609.8, 610.1, 592.9, 594.6, 606.7, 598.8, 635.7, 562.2, 614.0,589.4 = mean=610.42
+Response time=33.9375,33.8643,37.8494,39.9375,35.0034,37.3079,65.32,36.726,36.8555,34.0068 = 39.08
+inferebce= 951.3+ 942.6 + 929.7+ 938.6+934.7+936.1+1010.6+895.4+944.1+914.4= 939.75(mean)
+
+for tensorflow cuurency=1
+Total request= [ 437.9,447.41, 432.0,498.1,402.7,515.0,436.6,464.04,428.49,428.49,440.8] = 448.3209090909091
+tilesum =[264.6,279.06,263.91,312.1,246.4,328.5,282.52,290.2,275.8,278.8] = 282.189
+actualinfrenceresponse=[153.8,168.3,168.1,186.0,156.2,186.4,154.1,173.76,152.6,161.9]=166.116
+Response_time =[427.3,412.18,424.3,368.5,455.1,357.2,431.0,397.23,431.5,430.1]= 413.441
+inference =[869.7,863.6,860.1, 870.3,860.9,875.8,870.8,864.8,863.4, 873.7 ]=867.3100000000001
+
+
+pip3 install git+https://github.com/microsoft/onnxruntime.git@master
+
+Pallet1 - cam 1 and 4 - 63 total plys 
+
+Starting ply is 30 to 63 to 1 to 28.
+
+34 to 51 plys are seen in both cameras
+52 to 63 plys are seen in cam4
+1 to 28 plys are seen in cam 4
+
+Pallet2 -cam4 and 8
+pallet3 - ca
+ 
+iotedge logs edge-detection-aal-b9702u1-cam001 --tail 50 -f 
+ 
+iotedge logs edge-verification-aal-b9702u1-cam021 --tail 50 -f
+
+
+scp -r Dexined_onnx bashfaq@frlehdev2:/home/bashfaq/code/model 
+
+InsightsMetrics
+| where Name == "ed_preprocessing_duration_histogram_seconds_bucket"
+| project TimeGenerated, parse_json(Tags), Val, parse_json(Tags).port_id, parse_json(Tags).device_id
+| extend device_id = tostring(Tags.device_id)
+| extend host_id = tostring(Tags.host_id)
+| order by TimeGenerated desc
+
+Followed these cmds to get the meterics of ED
+
+1. docker exec -it edge-detection-aal-b9701u2-cam001 bash
+
+2. apt-get update; apt-get install curl
+
+3. curl localhost:9060/metrics
+
+Thank you for your offer of [Job title] at [Company name]. I am delighted to formally accept the offer, and I am very much looking forward to joining the team.

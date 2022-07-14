@@ -1,0 +1,50 @@
+2021-08-13 04:33:45,458 mock_handler.py:67 - Frame capture complete /mock-image-input/cam-aal-h08-019/DEV_000F3103830B-227.jpg
+2021-08-13 04:33:45,459 mqtt_listener.py:102 - OUTPUT_QUEUE.TASK DONE - "20210813043345459097"
+2021-08-13 04:33:56,879 mock_handler.py:96 - File written /image-input/cam-aal-h08-019/MockImDEV_000F3103830B-228.jpg. Status: True
+2021-08-13 04:33:56,880 mock_handler.py:99 - PAYLOAD - {"data": {"images": [{"location": "cam-aal-h08-019/MockImDEV_000F3103830B-228.jpg", "metadata": {"camera-id": "cam-aal-h08-019", "image-id": "img-192.168.8.38-1628829236.8800955", "image-content-type": "image/jpg", "capture-timestamp": "2021-08-13 04:33:56.880107", "height": 4860, "width": 6480}}], "session": {"jobId": "20201020-101010-blade-190-team-1-feedback", "cameraId": "cam-aal-h08-019", "moduleId": "image-grabber-cam-aal-h08-019"}}}
+2021-08-13 04:33:56,880 mock_handler.py:67 - Frame capture complete /mock-image-input/cam-aal-h08-019/DEV_000F3103830B-228.jpg
+2021-08-13 04:33:56,880 mqtt_listener.py:102 - OUTPUT_QUEUE.TASK DONE - "20210813043356880644"
+2021-08-13 04:34:08,303 mock_handler.py:96 - File written /image-input/cam-aal-h08-019/MockImDEV_000F3103830B-229.jpg. Status: True
+2021-08-13 04:34:08,304 mock_handler.py:99 - PAYLOAD - {"data": {"images": [{"location": "cam-aal-h08-019/MockImDEV_000F3103830B-229.jpg", "metadata": {"camera-id": "cam-aal-h08-019", "image-id": "img-192.168.8.38-1628829248.3039405", "image-content-type": "image/jpg", "capture-timestamp": "2021-08-13 04:34:08.303953", "height": 4860, "width": 6480}}], "session": {"jobId": "20201020-101010-blade-190-team-1-feedback", "cameraId": "cam-aal-h08-019", "moduleId": "image-grabber-cam-aal-h08-019"}}}
+2021-08-13 04:34:08,304 mock_handler.py:67 - Frame capture complete /mock-image-input/cam-aal-h08-019/DEV_000F3103830B-229.jpg
+2021-08-13 04:34:08,304 mqtt_listener.py:102 - OUTPUT_QUEUE.TASK DONE - "20210813043408304480"
+2021-08-13 04:34:19,714 mock_handler.py:96 - File written /image-input/cam-aal-h08-019/MockImDEV_000F3103830B-230.jpg. Status: True
+2021-08-13 04:34:19,714 mock_handler.py:99 - PAYLOAD - {"data": {"images": [{"location": "cam-aal-h08-019/MockImDEV_000F3103830B-230.jpg", "metadata": {"camera-id": "cam-aal-h08-019", "image-id": "img-192.168.8.38-1628829259.7148974", "image-content-type": "image/jpg", "capture-timestamp": "2021-08-13 04:34:19.714909", "height": 4860, "width": 6480}}], "session": {"jobId": "20201020-101010-blade-190-team-1-feedback", "cameraId": "cam-aal-h08-019", "moduleId": "image-grabber-cam-aal-h08-019"}}}
+2021-08-13 04:34:19,715 mock_handler.py:67 - Frame capture complete /mock-image-input/cam-aal-h08-019/DEV_000F3103830B-230.jpg
+2021-08-13 04:34:19,715 mqtt_listener.py:102 - OUTPUT_QUEUE.TASK DONE - "20210813043419715496"
+2021-08-13 04:34:31,133 mock_handler.py:96 - File written /image-input/cam-aal-h08-019/MockImDEV_000F3103830B-231.jpg. Status: True
+2021-08-13 04:34:31,133 mock_handler.py:99 - PAYLOAD - {"data": {"images": [{"location": "cam-aal-h08-019/MockImDEV_000F3103830B-231.jpg", "metadata": {"camera-id": "cam-aal-h08-019", "image-id": "img-192.168.8.38-1628829271.1338685", "image-content-type": "image/jpg", "capture-timestamp": "2021-08-13 04:34:31.133881", "height": 4860, "width": 6480}}], "session": {"jobId": "20201020-101010-blade-190-team-1-feedback", "cameraId": "cam-aal-h08-019", "moduleId": "image-grabber-cam-aal-h08-019"}}}
+2021-08-13 04:34:31,134 mock_handler.py:67 - Frame capture complete /mock-image-input/cam-aal-h08-019/DEV_000F3103830B-231.jpg
+2021-08-13 04:34:31,134 mqtt_listener.py:102 - OUTPUT_QUEUE.TASK DONE - "20210813043431134502"
+2021-08-13 04:34:42,553 mock_handler.py:96 - File written /image-input/cam-aal-h08-019/MockImDEV_000F3103830B-232.jpg. Status: True
+2021-08-13 04:34:42,553 mock_handler.py:99 - PAYLOAD - {"data": {"images": [{"location": "cam-aal-h08-019/MockImDEV_000F3103830B-232.jpg", "metadata": {"camera-id": "cam-aal-h08-019", "image-id": "img-192.168.8.38-1628829282.5538204", "image-content-type": "image/jpg", "capture-timestamp": "2021-08-13 04:34:42.553832", "height": 4860, "width": 6480}}], "session": {"jobId": "20201020-101010-blade-190-team-1-feedback", "cameraId": "cam-aal-h08-019", "moduleId": "image-grabber-cam-aal-h08-019"}}}
+2021-08-13 04:34:42,554 mock_handler.py:67 - Frame capture complete /mock-image-input/cam-aal-h08-019/DEV_000F3103830B-232.jpg
+2021-08-13 04:34:42,554 mqtt_listener.py:102 - OUTPUT_QUEUE.TASK DONE - "20210813043442554398"
+2021-08-13 04:34:53,978 mock_handler.py:96 - File written /image-input/cam-aal-h08-019/MockImDEV_000F3103830B-233.jpg. Status: True
+2021-08-13 04:34:53,978 mock_handler.py:99 - PAYLOAD - {"data": {"images": [{"location": "cam-aal-h08-019/MockImDEV_000F3103830B-233.jpg", "metadata": {"camera-id": "cam-aal-h08-019", "image-id": "img-192.168.8.38-1628829293.978272", "image-content-type": "image/jpg", "capture-timestamp": "2021-08-13 04:34:53.978284", "height": 4860, "width": 6480}}], "session": {"jobId": "20201020-101010-blade-190-team-1-feedback", "cameraId": "cam-aal-h08-019", "moduleId": "image-grabber-cam-aal-h08-019"}}}
+2021-08-13 04:34:53,978 mock_handler.py:67 - Frame capture complete /mock-image-input/cam-aal-h08-019/DEV_000F3103830B-233.jpg
+2021-08-13 04:34:53,978 mqtt_listener.py:102 - OUTPUT_QUEUE.TASK DONE - "20210813043453978869"
+2021-08-13 04:35:05,409 mock_handler.py:96 - File written /image-input/cam-aal-h08-019/MockImDEV_000F3103830B-234.jpg. Status: True
+2021-08-13 04:35:05,409 mock_handler.py:99 - PAYLOAD - {"data": {"images": [{"location": "cam-aal-h08-019/MockImDEV_000F3103830B-234.jpg", "metadata": {"camera-id": "cam-aal-h08-019", "image-id": "img-192.168.8.38-1628829305.4098914", "image-content-type": "image/jpg", "capture-timestamp": "2021-08-13 04:35:05.409906", "height": 4860, "width": 6480}}], "session": {"jobId": "20201020-101010-blade-190-team-1-feedback", "cameraId": "cam-aal-h08-019", "moduleId": "image-grabber-cam-aal-h08-019"}}}
+2021-08-13 04:35:05,410 mock_handler.py:67 - Frame capture complete /mock-image-input/cam-aal-h08-019/DEV_000F3103830B-234.jpg
+2021-08-13 04:35:05,410 mqtt_listener.py:102 - OUTPUT_QUEUE.TASK DONE - "20210813043505410611"
+2021-08-13 04:35:16,838 mock_handler.py:96 - File written /image-input/cam-aal-h08-019/MockImDEV_000F3103830B-235.jpg. Status: True
+2021-08-13 04:35:16,838 mock_handler.py:99 - PAYLOAD - {"data": {"images": [{"location": "cam-aal-h08-019/MockImDEV_000F3103830B-235.jpg", "metadata": {"camera-id": "cam-aal-h08-019", "image-id": "img-192.168.8.38-1628829316.838371", "image-content-type": "image/jpg", "capture-timestamp": "2021-08-13 04:35:16.838383", "height": 4860, "width": 6480}}], "session": {"jobId": "20201020-101010-blade-190-team-1-feedback", "cameraId": "cam-aal-h08-019", "moduleId": "image-grabber-cam-aal-h08-019"}}}
+2021-08-13 04:35:16,838 mock_handler.py:67 - Frame capture complete /mock-image-input/cam-aal-h08-019/DEV_000F3103830B-235.jpg
+2021-08-13 04:35:16,838 mqtt_listener.py:102 - OUTPUT_QUEUE.TASK DONE - "20210813043516838909"
+2021-08-13 04:35:28,265 mock_handler.py:96 - File written /image-input/cam-aal-h08-019/MockImDEV_000F3103830B-236.jpg. Status: True
+2021-08-13 04:35:28,265 mock_handler.py:99 - PAYLOAD - {"data": {"images": [{"location": "cam-aal-h08-019/MockImDEV_000F3103830B-236.jpg", "metadata": {"camera-id": "cam-aal-h08-019", "image-id": "img-192.168.8.38-1628829328.2652373", "image-content-type": "image/jpg", "capture-timestamp": "2021-08-13 04:35:28.265249", "height": 4860, "width": 6480}}], "session": {"jobId": "20201020-101010-blade-190-team-1-feedback", "cameraId": "cam-aal-h08-019", "moduleId": "image-grabber-cam-aal-h08-019"}}}
+2021-08-13 04:35:28,265 mock_handler.py:67 - Frame capture complete /mock-image-input/cam-aal-h08-019/DEV_000F3103830B-236.jpg
+2021-08-13 04:35:28,265 mqtt_listener.py:102 - OUTPUT_QUEUE.TASK DONE - "20210813043528265773"
+2021-08-13 04:35:31,266 mock_client.py:65 - Stopping image grabber
+Exception in thread MockCapture:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/app/mock_client.py", line 59, in start
+    self.handler()
+  File "/app/app/mock_handler.py", line 63, in __call__
+    image_file_name = next(self.image_generator)
+StopIteration

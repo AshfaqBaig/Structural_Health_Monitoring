@@ -1,0 +1,49 @@
+docker run --gpus '"device=0,1,2,3"'  --privileged --rm -it horovod/horovod
+
+docker run --gpus '"device=0,1,2,3"' -v /home/bashfaq/code/Multi-gpu_experiemnt/Karan_ED_module/horovod/do-ob-ml-edge-detection:/horovod/examples/do-ob-ml-edge-detection \
+-v/home/bashfaq/data:/horovod/examples/data --privileged=True --rm -it horovod/horovod
+
+docker pull horovod/horovod
+docker run --rm -it horovod:latest
+
+horovodrun -np 4 -H localhost:4 python  /horovod/examples/tensorflow2/tensorflow2_keras_mnist.py
+
+horovodrun -np 4 -H localhost:4 python  /horovod/examples/tensorflow2/tensorflow2_mnist.py
+
+horovodrun -np 4 -H localhost:4 python  /horovod/examples/tensorflow2/tensorflow2_synthetic_benchmark.py
+
+curl localhost:8000/v2/models/encoder/config
+
+uname_r = 5.4.0-107-generic
+
+cd /horovod/examples/do-ob-ml-edge-detection/DexiNed-TF2/environment
+
+pip3 install -r requirements.txt
+
+dev1:
+
+ def __init__(self, path= "/horovod/examples/data/trainset_clahe/train/"):
+
+docker run --gpus '"device=0,1,2,3"' -v /home/bashfaq/code/Tensorflow_Multi-GPU/Karan_branch/do-ob-ml-edge-detection:/horovod/examples/do-ob-ml-edge-detection \
+-v/home/bashfaq/data:/horovod/examples/data --privileged=True --rm -it horovod/horovod
+
+pip freeze | grep cudnn
+tensorflow-gpu==2.4.0
+
+horovodrun -np 4 -H localhost:4 python main.py
+
+horovodrun -np 4 -H localhost:4 python tensorflow2_keras_mnist.py
+
+horovodrun -np 4 -H localhost:4 python tensorflow2_mnist.py
+
+horovodrun -np 4 -H localhost:4 python tensorflow2_synthetic_benchmark.py
+
+horovodrun -np 4 -H localhost:4 python keras_imagenet_resnet50.py
+
+/home/bashfaq/data/orginal
+
+/mnt/azure/retrain/raw/hall10/ED_Model_Training/O1U2/v3.0.0/
+
+
+docker run --gpus '"device=0,1,2,3"' -v /home/bashfaq/code/Multi-gpu_experiemnt/Karan_ED_module/horovod/do-ob-ml-edge-detection:/horovod/examples/do-ob-ml-edge-detection \
+-v/mnt/azure/retrain/raw/hall10/ED_Model_Training/O1U2/v3.0.0/:/horovod/examples/data --privileged=True --rm -it horovod/horovod

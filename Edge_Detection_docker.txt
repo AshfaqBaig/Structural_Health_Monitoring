@@ -1,0 +1,37 @@
+docker run --name tis --gpus=all --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --rm -p8000:8000 -p8001:8001 -p8002:8002 -v/home/azureuser/cloudfiles/code/Users/asbaext_admin/do-ob-em-ml-edge-detection-51756-v1/Edge_Detection/server/docs/examples/model_repository:/models nvcr.io/nvidia/tritonserver:20.09-py3 tritonserver --model-repository=/models
+
+docker rm -f tis
+
+for edge2 : running tis 
+
+docker run --name tis --gpus=all --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --rm -p8000:8000 -p8001:8001 -p8002:8002 -v/home/bashfaq/code/em-ml-edge-detection/server/docs/examples/model_repository:/models nvcr.io/nvidia/tritonserver:21.04-py3 tritonserver --model-repository=/models
+
+To run tis in dkaldev:
+
+docker run --name tis --gpus '"device=0"' --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --rm \
+  -p8000:8000 -p8001:8001 -p8002:8002 \
+  -v/mnt/data/iot-work-volume/models/triton:/models \
+  nvcr.io/nvidia/tritonserver:21.04-py3 tritonserver \
+  --model-repository=/models --strict-model-config=false
+
+docker run --name tis --gpus '"device=0,1,2,3"' --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --rm \
+  -p8000:8000 -p8001:8001 -p8002:8002 \
+  -v/home/bashfaq/code/All_models:/models \
+  nvcr.io/nvidia/tritonserver:21.05-py3 tritonserver \
+  --model-repository=/models --strict-model-config=false
+
+When I am trying to e2e test and applying tensorflow-tensorRT optimisation in triton server, few nodes are not supported tensorRT.
+
+du -hs *| sort -rh| head -5
+
+Edge2- Running locally
+
+docker run --name tis --gpus '"device=0"' --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --rm \
+  -p8000:8000 -p8001:8001 -p8002:8002 \
+  -v/home/bashfaq/code/Tensorflow_optimisation/model:/models \
+  nvcr.io/nvidia/tritonserver:21.08-py3 tritonserver \
+  --model-repository=/models --strict-model-config=false
+
+python dali_grpc_client.py  --model_name 'Human_pre'  --input_name 'DALI_INPUT_0' --output_name 'DALI_OUTPUT_0' --img '/home/bashfaq/code/Triton_client_server/dali/dali_backend/client/data/DEV_000F310380BC-30224118383000.jpg'
+
+python dali_grpc_client.py  --model_name 'Human_pre'  --input_name 'DALI_INPUT_0' --output_name 'DALI_OUTPUT_0' --img_dir '/home/bashfaq/code/Triton_client_server/dali/dali_backend/client/Human_pre_client/data'

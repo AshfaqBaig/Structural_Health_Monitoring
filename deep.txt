@@ -1,0 +1,88 @@
+Deep Learning Fundamentals
+• MSE / MSE ● Adam / Adagrad / RSMProp
+• Softmax classifiers ● SGD / GD
+• Cross-entropy ● CNNs
+• RNNs / LSTMs ● GANs
+• AutoEncoders ● Reinforcement Learning
+• Natural Language Processing (basics)
+• Training, validation, and test datasets
+• Pooling
+• Padding
+• Overfitting
+• Hyperparameters
+• Features
+• Parameters
+• Activation functions
+• Transfer Learning
+• Frameworks
+• Image Classification
+• Dropout
+• Forwards and backwards propagation
+
+2. NLP
+• NLP tasks
+• NLP challenges
+• Embeddings
+• Word2Vec and GloVe
+• LSA / LDA
+• AutoEncoders
+• RNNs / LSTMs
+• ELMO
+• ULM-FIT
+• NMT
+• Seq2Seq
+• Positional encoding
+• Self-attention
+• Multi-head attention
+• Masking
+• GPT, GPT2, GPT3
+• BERT
+• RoBERTA
+• Megatron
+• Transformer XL
+• XLNet
+• ALBERT
+• ELECTRA
+• ERNIE 2.0
+• T-NLG
+• NeMo
+• BioBERT
+• BioMegatroN
+• TensorRT
+• NVIDIA Triton Inference Server
+• Kubeflow ●
+• NVIDIA Jarvis
+• ONNYX
+• BLEU
+
+
+3. Data Science
+• PCA
+• cuGraph
+• kNN
+• Pandas
+• DBSCAN
+• Matplotlib
+• tSVD
+• Scikit-learn
+• XGBoost
+• NumPy
+• Classification
+• Precision and Recall
+• Clustering
+• AUC
+• Collaborative filters
+• One-hot-encoding
+• Linear and non-linear regression
+• DASK
+• Dimension reduction
+• Apache Arrow
+• Supervised learning
+• Parquet
+• Unsupervised learning
+• Blazing DB
+• Regularization
+• Bokeh
+• cuML
+• DataShader
+• cuDF

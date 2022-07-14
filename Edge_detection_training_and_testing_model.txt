@@ -1,0 +1,134 @@
+
+
+quest.empinsurance@mediassist.in
+--------------------------------------------------------
+
+Edge Detection (Training and Testing):
+
+Cammands related to Images 20mm To run in test state: 
+
+conda activate tf_gpu
+
+python prepare_lists.py --dataset_path=/home/bashfaq/data/dataset-handover_20mm/tiledset --min_side_size=400 --include_negative_tiles=True --include_partial_tiles=True
+
+python3 main.py --model_state test --checkpoint_dir /home/bashfaq/code/model --checkpoint dexined_h5 --test_dir /home/bashfaq/data/dataset-handover_20mm/tiledset --test_list valid_list.txt --rgbn_mean 103.939,116.779,123.68,137.86 --test_img_height 400 --test_img_width 400 --output_dir /home/bashfaq/code/Results_20mm/Output_20mm 
+
+python stitch_outputs.py --input_tiles_dir /home/bashfaq/code/Results_20mm/Output_20mm/fuse  --output_images_dir=/home/bashfaq/code/Results_20mm/Output_stitched/fuse_stitched
+
+--------------------------------------
+Cammands related to Images 35mm To run test state: 
+
+conda activate tf_gpu
+
+python prepare_lists.py --dataset_path /home/bashfaq/data/dataset-handover_35mm/tiledset --min_side_size=400 --include_negative_tiles=True --include_partial_tiles=True
+
+
+python3 main.py --model_state test --checkpoint_dir /home/bashfaq/code/model --checkpoint dexined_h5 --test_dir /home/bashfaq/data/dataset-handover_35mm/tiledset --test_list valid_list.txt --rgbn_mean 103.939,116.779,123.68,137.86 --test_img_height 400 --test_img_width 400 --output_dir /home/bashfaq/code/Results_35mm/Output_35mm 
+
+
+python stitch_outputs.py --input_tiles_dir /home/bashfaq/code/Results_35mm/Output_20mm/fuse  --output_images_dir=/home/bashfaq/code/Results_35mm/Output_stitched/fuse_stitched
+
+==============================================================
+Cammands related to Sample Images 35mm To run test state: 
+
+python prepare_lists.py --dataset_path /home/bashfaq/data/Sample_Dataset_Edge_Detection/tiledset_1_image --min_side_size=400 --include_negative_tiles=True --include_partial_tiles=True
+
+
+python3 main.py --model_state test --checkpoint_dir /home/bashfaq/code/model --checkpoint dexined_h5 --test_dir /home/bashfaq/data/Sample_Dataset_Edge_Detection/tiledset --test_list valid_list.txt --rgbn_mean 103.939,116.779,123.68,137.86 --test_img_height 400 --test_img_width 400 --output_dir /home/bashfaq/code/Result_sample_35mm/Output_sample_35mm 
+
+=================================================================================================
+cammands related to Images 35mm(192 dataset) to run in test state:  
+
+conda activate tf_gpu
+
+python prepare_lists.py --dataset_path /home/bashfaq/data/Dataset_35mm_img_100/tiledset --min_side_size=400 --include_negative_tiles=True --include_partial_tiles=True
+
+python prepare_lists.py --dataset_path /home/bashfaq/data/output/trainset --min_side_size=400 --include_negative_tiles=True --include_partial_tiles=True
+model version=run68
+python3 main.py --model_state test --checkpoint_dir /home/bashfaq/code/model/68 --checkpoint dexined_h5 --test_dir /home/bashfaq/data/Dataset_35mm_img_100/tiledset --test_list valid_list.txt --rgbn_mean 103.939,116.779,123.68,137.86 --test_img_height 400 --test_img_width 400 --output_dir /home/bashfaq/code/Results_35mm_100_img/Results_run68/Output_35mm --gpu 1
+
+python stitch_outputs.py --input_tiles_dir /home/bashfaq/code/Results_35mm_100_img/Results_run68/Output_35mm/fuse  --output_images_dir=/home/bashfaq/code/Results_35mm_100_img/Results_run68/Output_stitched/fuse_stitched
+
+python stitch_outputs.py --input_tiles_dir /home/bashfaq/code/Cross_loss_sum/do-ob-ml-edge-detection-v2/Dexined/checkpoints/ED/19/ED_res --output_images_dir=/home/bashfaq/code/Cross_loss_sum/do-ob-ml-edge-detection-v2/Dexined/checkpoints/ED/19/full
+model version=run67 
+python3 main.py --model_state test --checkpoint_dir /home/bashfaq/code/model/67 --checkpoint dexined_h5 --test_dir /home/bashfaq/data/Dataset_35mm_img_100/tiledset --test_list valid_list.txt --rgbn_mean 103.939,116.779,123.68,137.86 --test_img_height 400 --test_img_width 400 --output_dir /home/bashfaq/code/Results_35mm_100_img/Results_run67/Output_35mm --gpu 2
+
+python stitch_outputs.py --input_tiles_dir /home/bashfaq/code/Results_35mm_100_img/Results_run67/Output_35mm/fuse  --output_images_dir=/home/bashfaq/code/Results_35mm_100_img/Results_run67/Output_stitched/fuse_stitched
+
+model version=run66 
+python3 main.py --model_state test --checkpoint_dir /home/bashfaq/code/model/66 --checkpoint dexined_h5 --test_dir /home/bashfaq/data/Dataset_35mm_img_100/tiledset --test_list valid_list.txt --rgbn_mean 103.939,116.779,123.68,137.86 --test_img_height 400 --test_img_width 400 --output_dir /home/bashfaq/code/Results_35mm_100_img/Results_run66/Output_35mm --gpu 3
+
+python stitch_outputs.py --input_tiles_dir /home/bashfaq/code/Results_35mm_100_img/Results_run66/Output_35mm/fuse  --output_images_dir=/home/bashfaq/code/Results_35mm_100_img/Results_run66/Output_stitched/fuse_stitched
+
+========================================================================================================
+cammands related to folded images (35 dataset) to run in test state:  
+
+conda activate tf_gpu
+
+python prepare_lists.py --dataset_path /home/bashfaq/data/Dataset_folded_img_35/tiledset --min_side_size=400 --include_negative_tiles=True --include_partial_tiles=True
+
+model version=run68
+python3 main.py --model_state test --checkpoint_dir /home/bashfaq/code/model/68 --checkpoint dexined_h5 --test_dir /home/bashfaq/data/Dataset_folded_img_35/tiledset --test_list valid_list.txt --rgbn_mean 103.939,116.779,123.68,137.86 --test_img_height 400 --test_img_width 400 --output_dir /home/bashfaq/code/Result_folded_35_img/Results_run68/Output_folded --gpu 1
+
+python stitch_outputs.py --input_tiles_dir /home/bashfaq/code/Result_folded_35_img/Results_run68/Output_folded/fuse  --output_images_dir=/home/bashfaq/code/Result_folded_35_img/Results_run68/Output_stitched/fuse_stitched
+
+
+model version=run67 
+python3 main.py --model_state test --checkpoint_dir /home/bashfaq/code/model/67 --checkpoint dexined_h5 --test_dir /home/bashfaq/data/Dataset_folded_img_35/tiledset --test_list valid_list.txt --rgbn_mean 103.939,116.779,123.68,137.86 --test_img_height 400 --test_img_width 400 --output_dir /home/bashfaq/code/Result_folded_35_img/Results_run67/Output_folded --gpu 2
+
+python stitch_outputs.py --input_tiles_dir /home/bashfaq/code/Result_folded_35_img/Results_run67/Output_folded/fuse  --output_images_dir=/home/bashfaq/code/Result_folded_35_img/Results_run67/Output_stitched/fuse_stitched
+
+model version=run66 
+python3 main.py --model_state test --checkpoint_dir /home/bashfaq/code/model/66 --checkpoint dexined_h5 --test_dir /home/bashfaq/data/Dataset_folded_img_35/tiledset --test_list valid_list.txt --rgbn_mean 103.939,116.779,123.68,137.86 --test_img_height 400 --test_img_width 400 --output_dir /home/bashfaq/code/Result_folded_35_img/Results_run66/Output_folded --gpu 3
+
+python stitch_outputs.py --input_tiles_dir /home/bashfaq/code/Result_folded_35_img/Results_run66/Output_folded/fuse  --output_images_dir=/home/bashfaq/code/Result_folded_35_img/Results_run66/Output_stitched/fuse_stitched
+
+model version=new model 
+python3 main.py --model_state test --checkpoint_dir /home/bashfaq/code/model/new_model --checkpoint dexined_h5 --test_dir /home/bashfaq/data/Dataset_folded_img_35/tiledset --test_list valid_list.txt --rgbn_mean 103.939,116.779,123.68,137.86 --test_img_height 400 --test_img_width 400 --output_dir /home/bashfaq/code/Result_folded_35_img/Results_model/Output_folded --gpu 3
+
+python stitch_outputs.py --input_tiles_dir /home/bashfaq/code/Result_folded_35_img/Results_model/Output_folded/fuse  --output_images_dir=/home/bashfaq/code/Result_folded_35_img/Results_model/Output_stitched/fuse_stitched
+
+python stitch_outputs.py --input_tiles_dir /home/bashfaq/code/Pytorch_dexined_ED/Checking/output  --output_images_dir=/home/bashfaq/code/Pytorch_dexined_ED/Checking/full
+
+python stitch_outputs.py --input_tiles_dir /home/bashfaq/code/Cross_loss_with_threshold/do-ob-ml-edge-detection-v2/Dexined/checkpoints/ED/99/ED_res  --output_images_dir=/home/bashfaq/code/Cross_loss_with_threshold/do-ob-ml-edge-detection-v2/Dexined/result
+---------------------------------------------------------------------------------------------------------
+	
+python prepare_lists.py --dataset_path /home/bashfaq/data/dataset-handover_35mm/trainset --min_side_size=400 --include_negative_tiles=True --include_partial_tiles=True
+
+
+Pytorch model:optical
+
+for Train data
+python prepare_lists.py --dataset_path /home/bashfaq/data/Sample_ED_test/trainset --min_side_size=400 --include_negative_tiles=False --include_partial_tiles=False
+
+python prepare_lists.py --dataset_path /home/bashfaq/data/ED_full/trainset --min_side_size=400 --include_negative_tiles=False --include_partial_tiles=False
+
+python prepare_lists.py --dataset_path /home/bashfaq/data/ED_UD_01/trainset --min_side_size=400 --include_negative_tiles=False --include_partial_tiles=False
+
+python prepare_lists.py --dataset_path /home/bashfaq/data/ED_ODU1/trainset --min_side_size=400 --include_negative_tiles=False --include_partial_tiles=False
+
+for Test data
+python prepare_lists.py --dataset_path /home/bashfaq/data/Sample_ED_test/trainset --min_side_size=400 --include_negative_tiles=True --include_partial_tiles=True
+
+python prepare_lists.py --dataset_path /home/bashfaq/data/ED_UD_01/trainset --min_side_size=400 --include_negative_tiles=True --include_partial_tiles=True
+
+Python main.py --input_val_dir="/home/bashfaq/code/DexiNed_Pytorch/" --output_dir="/home/bashfaq/code/DexiNed_Pytorch/Results" --test_dataset="CLASSIC" --use_dataset="FALSE"  --is_testing=True --choose_test_data=-1 --is_testing=True --checkpoint_data="/home/bashfaq/code/DexiNed_Pytorch/model/14_model.pth" --test_img_width=512 --test_img_height=512 --res_dir="/home/bashfaq/code/DexiNed_Pytorch/Results"
+
+Edge2:
+python main.py --input_val_dir="/home/bashfaq/data/dataset-handover_35mm/trainset/" --output_dir="/home/bashfaq/code/Pytorch_dexined/DexiNed/Results/" --test_list=valid_list.txt  --test_dataset="CLASSIC" --use_dataset="FALSE"  --is_testing=True --choose_test_data=-1 --is_testing=True --checkpoint_data="/home/bashfaq/code/Pytorch_dexined/DexiNed/model/14_model.pth" --test_img_width=400 --test_img_height=400 --res_dir="/home/bashfaq/code/Pytorch_dexined/DexiNed/Results"
+
+python main.py --input_val_dir="/home/bashfaq/data/dataset-handover_35mm/trainset/valid/images" 
+
+Pytorch model- Optical
+
+python prepare_lists.py --dataset_path /home/bashfaq/data/v2.0.0/tiledset_clahe --min_side_size=400 --include_negative_tiles=False --include_partial_tiles=False
+
+python main.py --train_data="BIPED"
+
+for frldev2:
+
+python prepare_lists.py --dataset_path /home/bashfaq/data/v3.0.0/tiledset_clahe_demo --min_side_size=400 --include_negative_tiles=False --include_partial_tiles=False
+
+python3 main.py --model_state test --checkpoint_dir /home/bashfaq/code/model --checkpoint dexined_h5 --test_dir /home/bashfaq/data/v3.0.0/tiledset_clahe_demo --test_list valid_list.txt --rgbn_mean 103.939,116.779,123.68,137.86 --test_img_height 400 --test_img_width 400 --output_dir /home/bashfaq/code/Multi-gpu_experiemnt/Karan_ED_module/karan_orginal_version/do-ob-ml-edge-detection/DexiNed-TF2/output 
+
+
